@@ -1,0 +1,29 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 8
+Rules claiming more threads will be scaled down.
+Job counts:
+	count	jobs
+	1	all
+	1	differential_expression
+	2
+
+[Mon Nov 11 11:39:45 2024]
+rule differential_expression:
+    input: /home/utilisateur/Bureau/single_cell_DEG/results/NML1_seurat_object.rds, /home/utilisateur/Bureau/single_cell_DEG/results/SCD1_seurat_object.rds, /home/utilisateur/Bureau/single_cell_DEG/results/SCD2_seurat_object.rds, /home/utilisateur/Bureau/single_cell_DEG/results/NML2_seurat_object.rds
+    output: /home/utilisateur/Bureau/single_cell_DEG/results/DE_results.csv, /home/utilisateur/Bureau/single_cell_DEG/results/volcano_plot.png, /home/utilisateur/Bureau/single_cell_DEG/results/PCA_plot.png
+    jobid: 1
+
+[Mon Nov 11 11:51:49 2024]
+Finished job 1.
+1 of 2 steps (50%) done
+
+[Mon Nov 11 11:51:49 2024]
+localrule all:
+    input: /home/utilisateur/Bureau/single_cell_DEG/results/DE_results.csv, /home/utilisateur/Bureau/single_cell_DEG/results/volcano_plot.png, /home/utilisateur/Bureau/single_cell_DEG/results/PCA_plot.png
+    jobid: 0
+
+[Mon Nov 11 11:51:49 2024]
+Finished job 0.
+2 of 2 steps (100%) done
+Complete log: /home/utilisateur/Bureau/single_cell_DEG/.snakemake/log/2024-11-11T113945.802096.snakemake.log

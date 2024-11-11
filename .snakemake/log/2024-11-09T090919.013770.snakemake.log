@@ -1,0 +1,2 @@
+SyntaxError in line 37 of /home/utilisateur/Bureau/single_cell_DEG/Snakefile:
+Multiple run or shell keywords in rule quality_control. (Snakefile, line 37)

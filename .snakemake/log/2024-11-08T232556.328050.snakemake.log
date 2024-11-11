@@ -1,0 +1,48 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 2
+Rules claiming more threads will be scaled down.
+Job counts:
+	count	jobs
+	1	all
+	1	differential_expression
+	5	quality_control
+	7
+
+[Fri Nov  8 23:25:56 2024]
+rule quality_control:
+    input: /home/utilisateur/Bureau/sc_RNA_seq_data_preprocessing/data/seurat_object
+    output: /home/utilisateur/Bureau/single_cell_DEG/results/seurat_object_seurat_object.rds
+    jobid: 3
+    wildcards: output_dir=/home/utilisateur/Bureau/single_cell_DEG/results, sample=seurat_object
+
+[Fri Nov  8 23:25:56 2024]
+rule quality_control:
+    input: /home/utilisateur/Bureau/sc_RNA_seq_data_preprocessing/data/SCD2
+    output: /home/utilisateur/Bureau/single_cell_DEG/results/SCD2_seurat_object.rds
+    jobid: 4
+    wildcards: output_dir=/home/utilisateur/Bureau/single_cell_DEG/results, sample=SCD2
+
+[Fri Nov  8 23:26:02 2024]
+Error in rule quality_control:
+    jobid: 3
+    output: /home/utilisateur/Bureau/single_cell_DEG/results/seurat_object_seurat_object.rds
+
+RuleException:
+CalledProcessError in line 25 of /home/utilisateur/Bureau/single_cell_DEG/Snakefile:
+Command 'set -euo pipefail;  Rscript --vanilla /home/utilisateur/Bureau/single_cell_DEG/.snakemake/scripts/tmpyly7lxyq.quality_control_and_preprocessing.R' returned non-zero exit status 1.
+  File "/home/utilisateur/Bureau/single_cell_DEG/Snakefile", line 25, in __rule_quality_control
+  File "/usr/lib/python3.8/concurrent/futures/thread.py", line 57, in run
+[Fri Nov  8 23:26:02 2024]
+Error in rule quality_control:
+    jobid: 4
+    output: /home/utilisateur/Bureau/single_cell_DEG/results/SCD2_seurat_object.rds
+
+RuleException:
+CalledProcessError in line 25 of /home/utilisateur/Bureau/single_cell_DEG/Snakefile:
+Command 'set -euo pipefail;  Rscript --vanilla /home/utilisateur/Bureau/single_cell_DEG/.snakemake/scripts/tmp0xm54d53.quality_control_and_preprocessing.R' returned non-zero exit status 1.
+  File "/home/utilisateur/Bureau/single_cell_DEG/Snakefile", line 25, in __rule_quality_control
+  File "/usr/lib/python3.8/concurrent/futures/thread.py", line 57, in run
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: /home/utilisateur/Bureau/single_cell_DEG/.snakemake/log/2024-11-08T232556.328050.snakemake.log

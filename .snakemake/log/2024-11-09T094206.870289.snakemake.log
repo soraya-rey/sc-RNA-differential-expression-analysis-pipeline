@@ -1,0 +1,67 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 2
+Rules claiming more threads will be scaled down.
+Job counts:
+	count	jobs
+	1	all
+	1	differential_expression
+	4	quality_control
+	6
+
+[Sat Nov  9 09:42:06 2024]
+rule quality_control:
+    input: /home/utilisateur/Bureau/single_cell_DEG/data
+    output: /home/utilisateur/Bureau/single_cell_DEG/results/SCD1_seurat_object.rds
+    jobid: 3
+    wildcards: output_dir=/home/utilisateur/Bureau/single_cell_DEG/results, sample=SCD1
+
+
+[Sat Nov  9 09:42:06 2024]
+rule quality_control:
+    input: /home/utilisateur/Bureau/single_cell_DEG/data
+    output: /home/utilisateur/Bureau/single_cell_DEG/results/NML2_seurat_object.rds
+    jobid: 5
+    wildcards: output_dir=/home/utilisateur/Bureau/single_cell_DEG/results, sample=NML2
+
+[Sat Nov  9 09:43:44 2024]
+Finished job 3.
+1 of 6 steps (17%) done
+
+[Sat Nov  9 09:43:44 2024]
+rule quality_control:
+    input: /home/utilisateur/Bureau/single_cell_DEG/data
+    output: /home/utilisateur/Bureau/single_cell_DEG/results/NML1_seurat_object.rds
+    jobid: 2
+    wildcards: output_dir=/home/utilisateur/Bureau/single_cell_DEG/results, sample=NML1
+
+Warning: the following output files of rule quality_control were not present when the DAG was created:
+{'/home/utilisateur/Bureau/single_cell_DEG/results/NML1_seurat_object.rds'}
+[Sat Nov  9 09:43:45 2024]
+Finished job 5.
+2 of 6 steps (33%) done
+
+[Sat Nov  9 09:43:45 2024]
+rule quality_control:
+    input: /home/utilisateur/Bureau/single_cell_DEG/data
+    output: /home/utilisateur/Bureau/single_cell_DEG/results/SCD2_seurat_object.rds
+    jobid: 4
+    wildcards: output_dir=/home/utilisateur/Bureau/single_cell_DEG/results, sample=SCD2
+
+Warning: the following output files of rule quality_control were not present when the DAG was created:
+{'/home/utilisateur/Bureau/single_cell_DEG/results/SCD2_seurat_object.rds'}
+[Sat Nov  9 09:45:05 2024]
+Finished job 2.
+3 of 6 steps (50%) done
+[Sat Nov  9 09:45:05 2024]
+Finished job 4.
+4 of 6 steps (67%) done
+
+[Sat Nov  9 09:45:05 2024]
+rule differential_expression:
+    input: /home/utilisateur/Bureau/single_cell_DEG/results/NML1_seurat_object.rds, /home/utilisateur/Bureau/single_cell_DEG/results/SCD1_seurat_object.rds, /home/utilisateur/Bureau/single_cell_DEG/results/SCD2_seurat_object.rds, /home/utilisateur/Bureau/single_cell_DEG/results/NML2_seurat_object.rds
+    output: /home/utilisateur/Bureau/single_cell_DEG/results/DE_results.csv, /home/utilisateur/Bureau/single_cell_DEG/results/volcano_plot.png, /home/utilisateur/Bureau/single_cell_DEG/results/PCA_plot.png
+    jobid: 1
+
+RuleException in line 44 of /home/utilisateur/Bureau/single_cell_DEG/Snakefile:
+NameError: The name "','" is unknown in this context. Please make sure that you defined that variable. Also note that braces not used for variable access have to be escaped by repeating them, i.e. {{print $1}}

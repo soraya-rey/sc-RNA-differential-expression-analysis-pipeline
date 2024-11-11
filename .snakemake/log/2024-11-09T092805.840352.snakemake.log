@@ -1,0 +1,38 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 2
+Rules claiming more threads will be scaled down.
+Job counts:
+	count	jobs
+	1	all
+	1	differential_expression
+	5	quality_control
+	7
+
+[Sat Nov  9 09:28:05 2024]
+rule quality_control:
+    input: /home/utilisateur/Bureau/sc_RNA_seq_data_preprocessing/data
+    output: /home/utilisateur/Bureau/single_cell_DEG/results/SCD1_seurat_object.rds
+    jobid: 3
+    wildcards: output_dir=/home/utilisateur/Bureau/single_cell_DEG/results, sample=SCD1
+
+[Sat Nov  9 09:28:05 2024]
+rule quality_control:
+    input: /home/utilisateur/Bureau/sc_RNA_seq_data_preprocessing/data
+    output: /home/utilisateur/Bureau/single_cell_DEG/results/NML1_seurat_object.rds
+    jobid: 2
+    wildcards: output_dir=/home/utilisateur/Bureau/single_cell_DEG/results, sample=NML1
+
+Waiting at most 5 seconds for missing files.
+MissingOutputException in line 25 of /home/utilisateur/Bureau/single_cell_DEG/Snakefile:
+Missing files after 5 seconds:
+/home/utilisateur/Bureau/single_cell_DEG/results/SCD1_seurat_object.rds
+This might be due to filesystem latency. If that is the case, consider to increase the wait time with --latency-wait.
+Waiting at most 5 seconds for missing files.
+MissingOutputException in line 25 of /home/utilisateur/Bureau/single_cell_DEG/Snakefile:
+Missing files after 5 seconds:
+/home/utilisateur/Bureau/single_cell_DEG/results/NML1_seurat_object.rds
+This might be due to filesystem latency. If that is the case, consider to increase the wait time with --latency-wait.
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: /home/utilisateur/Bureau/single_cell_DEG/.snakemake/log/2024-11-09T092805.840352.snakemake.log

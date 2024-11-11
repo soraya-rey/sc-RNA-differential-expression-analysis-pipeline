@@ -1,0 +1,6 @@
+Building DAG of jobs...
+MissingInputException in line 9 of /home/utilisateur/Bureau/single_cell_DEG/Snakefile:
+Missing input files for rule preprocess_sample:
+data/NML1/features.tsv
+data/NML1/matrix.mtx
+data/NML1/barcodes.tsv

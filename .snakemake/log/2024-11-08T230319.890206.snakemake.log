@@ -1,0 +1,48 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 2
+Rules claiming more threads will be scaled down.
+Job counts:
+	count	jobs
+	1	all
+	1	differential_expression
+	5	quality_control
+	7
+
+[Fri Nov  8 23:03:19 2024]
+rule quality_control:
+    input: /home/utilisateur/Bureau/sc_RNA_seq_data_preprocessing/data/NML1
+    output: /home/utilisateur/Bureau/single_cell_DEG/results/NML1_seurat_object.rds
+    jobid: 1
+    wildcards: output_dir=/home/utilisateur/Bureau/single_cell_DEG/results, sample=NML1
+
+[Fri Nov  8 23:03:19 2024]
+rule quality_control:
+    input: /home/utilisateur/Bureau/sc_RNA_seq_data_preprocessing/data/SCD2
+    output: /home/utilisateur/Bureau/single_cell_DEG/results/SCD2_seurat_object.rds
+    jobid: 4
+    wildcards: output_dir=/home/utilisateur/Bureau/single_cell_DEG/results, sample=SCD2
+
+[Fri Nov  8 23:03:19 2024]
+Error in rule quality_control:
+    jobid: 1
+    output: /home/utilisateur/Bureau/single_cell_DEG/results/NML1_seurat_object.rds
+
+[Fri Nov  8 23:03:19 2024]
+Error in rule quality_control:
+    jobid: 4
+    output: /home/utilisateur/Bureau/single_cell_DEG/results/SCD2_seurat_object.rds
+
+RuleException:
+ValueError in line 25 of /home/utilisateur/Bureau/single_cell_DEG/Snakefile:
+Unsupported script: Expecting either Python (.py), R (.R), RMarkdown (.Rmd) or Julia (.jl) script.
+  File "/home/utilisateur/Bureau/single_cell_DEG/Snakefile", line 25, in __rule_quality_control
+  File "/usr/lib/python3.8/concurrent/futures/thread.py", line 57, in run
+RuleException:
+ValueError in line 25 of /home/utilisateur/Bureau/single_cell_DEG/Snakefile:
+Unsupported script: Expecting either Python (.py), R (.R), RMarkdown (.Rmd) or Julia (.jl) script.
+  File "/home/utilisateur/Bureau/single_cell_DEG/Snakefile", line 25, in __rule_quality_control
+  File "/usr/lib/python3.8/concurrent/futures/thread.py", line 57, in run
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: /home/utilisateur/Bureau/single_cell_DEG/.snakemake/log/2024-11-08T230319.890206.snakemake.log

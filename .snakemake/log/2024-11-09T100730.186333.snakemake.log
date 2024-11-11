@@ -1,0 +1,29 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 2
+Rules claiming more threads will be scaled down.
+Job counts:
+	count	jobs
+	1	all
+	1	differential_expression
+	2
+
+[Sat Nov  9 10:07:30 2024]
+rule differential_expression:
+    input: /home/utilisateur/Bureau/single_cell_DEG/results/NML1_seurat_object.rds, /home/utilisateur/Bureau/single_cell_DEG/results/SCD1_seurat_object.rds, /home/utilisateur/Bureau/single_cell_DEG/results/SCD2_seurat_object.rds, /home/utilisateur/Bureau/single_cell_DEG/results/NML2_seurat_object.rds
+    output: /home/utilisateur/Bureau/single_cell_DEG/results/DE_results.csv, /home/utilisateur/Bureau/single_cell_DEG/results/volcano_plot.png, /home/utilisateur/Bureau/single_cell_DEG/results/PCA_plot.png
+    jobid: 1
+
+[Sat Nov  9 10:07:39 2024]
+Error in rule differential_expression:
+    jobid: 1
+    output: /home/utilisateur/Bureau/single_cell_DEG/results/DE_results.csv, /home/utilisateur/Bureau/single_cell_DEG/results/volcano_plot.png, /home/utilisateur/Bureau/single_cell_DEG/results/PCA_plot.png
+    shell:
+        
+        Rscript --vanilla scripts/differential_expression_analysis.R /home/utilisateur/Bureau/single_cell_DEG/results/NML1_seurat_object.rds /home/utilisateur/Bureau/single_cell_DEG/results/SCD1_seurat_object.rds /home/utilisateur/Bureau/single_cell_DEG/results/SCD2_seurat_object.rds /home/utilisateur/Bureau/single_cell_DEG/results/NML2_seurat_object.rds /home/utilisateur/Bureau/single_cell_DEG/results/DE_results.csv /home/utilisateur/Bureau/single_cell_DEG/results/volcano_plot.png /home/utilisateur/Bureau/single_cell_DEG/results/PCA_plot.png
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: /home/utilisateur/Bureau/single_cell_DEG/.snakemake/log/2024-11-09T100730.186333.snakemake.log

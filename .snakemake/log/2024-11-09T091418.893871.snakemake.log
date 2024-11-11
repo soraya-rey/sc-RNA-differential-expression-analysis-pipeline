@@ -1,0 +1,4 @@
+Building DAG of jobs...
+MissingInputException in line 11 of /home/utilisateur/Bureau/single_cell_DEG/Snakefile:
+Missing input files for rule all:
+/home/utilisateur/Bureau/single_cell_DEG/results/DE_results.csv

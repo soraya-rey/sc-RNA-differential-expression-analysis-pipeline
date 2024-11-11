@@ -1,0 +1,4 @@
+Building DAG of jobs...
+WildcardError in line 25 of /home/utilisateur/Bureau/single_cell_DEG/Snakefile:
+Wildcards in input files cannot be determined from output files:
+'data_dir'

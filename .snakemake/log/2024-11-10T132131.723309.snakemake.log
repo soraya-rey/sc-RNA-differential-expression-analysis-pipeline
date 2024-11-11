@@ -1,0 +1,26 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job counts:
+	count	jobs
+	1	all
+	1	differential_expression
+	2
+
+[Sun Nov 10 13:21:31 2024]
+rule differential_expression:
+    input: /home/utilisateur/Bureau/single_cell_DEG/results/NML1_seurat_object.rds, /home/utilisateur/Bureau/single_cell_DEG/results/SCD1_seurat_object.rds, /home/utilisateur/Bureau/single_cell_DEG/results/SCD2_seurat_object.rds, /home/utilisateur/Bureau/single_cell_DEG/results/NML2_seurat_object.rds
+    output: /home/utilisateur/Bureau/single_cell_DEG/results/DE_results.csv, /home/utilisateur/Bureau/single_cell_DEG/results/volcano_plot.png, /home/utilisateur/Bureau/single_cell_DEG/results/PCA_plot.png
+    jobid: 1
+
+Waiting at most 5 seconds for missing files.
+MissingOutputException in line 44 of /home/utilisateur/Bureau/single_cell_DEG/Snakefile:
+Missing files after 5 seconds:
+/home/utilisateur/Bureau/single_cell_DEG/results/DE_results.csv
+This might be due to filesystem latency. If that is the case, consider to increase the wait time with --latency-wait.
+Removing output files of failed job differential_expression since they might be corrupted:
+/home/utilisateur/Bureau/single_cell_DEG/results/volcano_plot.png, /home/utilisateur/Bureau/single_cell_DEG/results/PCA_plot.png
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: /home/utilisateur/Bureau/single_cell_DEG/.snakemake/log/2024-11-10T132131.723309.snakemake.log

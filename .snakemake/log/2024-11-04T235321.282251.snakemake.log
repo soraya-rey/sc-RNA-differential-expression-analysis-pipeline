@@ -1,0 +1,38 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job counts:
+	count	jobs
+	1	all
+	1	differential_expression
+	1	integrate_samples
+	4	preprocess_sample
+	7
+
+[Mon Nov  4 23:53:21 2024]
+rule preprocess_sample:
+    input: data/SCD2/matrix.mtx, data/SCD2/features.tsv, data/SCD2/barcodes.tsv
+    output: results/SCD2/processed_seurat_object.rds
+    jobid: 6
+    wildcards: sample=SCD2
+
+[Mon Nov  4 23:53:21 2024]
+Error in rule preprocess_sample:
+    jobid: 6
+    output: results/SCD2/processed_seurat_object.rds
+
+RuleException:
+URLError in line 17 of /home/utilisateur/Bureau/single_cell_DEG/Snakefile:
+<urlopen error [Errno 2] No such file or directory: '/home/utilisateur/Bureau/single_cell_DEG/scripts/preprocess_sample.R'>
+  File "/home/utilisateur/Bureau/single_cell_DEG/Snakefile", line 17, in __rule_preprocess_sample
+  File "/usr/lib/python3.8/urllib/request.py", line 222, in urlopen
+  File "/usr/lib/python3.8/urllib/request.py", line 525, in open
+  File "/usr/lib/python3.8/urllib/request.py", line 542, in _open
+  File "/usr/lib/python3.8/urllib/request.py", line 502, in _call_chain
+  File "/usr/lib/python3.8/urllib/request.py", line 1489, in file_open
+  File "/usr/lib/python3.8/urllib/request.py", line 1528, in open_local_file
+  File "/usr/lib/python3.8/concurrent/futures/thread.py", line 57, in run
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: /home/utilisateur/Bureau/single_cell_DEG/.snakemake/log/2024-11-04T235321.282251.snakemake.log

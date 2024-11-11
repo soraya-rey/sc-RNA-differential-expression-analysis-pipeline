@@ -1,0 +1,60 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 2
+Rules claiming more threads will be scaled down.
+Job counts:
+	count	jobs
+	1	all
+	1	differential_expression
+	5	quality_control
+	7
+
+[Fri Nov  8 22:52:21 2024]
+rule quality_control:
+    input: /home/utilisateur/Bureau/sc_RNA_seq_data_preprocessing/data/SCD1
+    output: /home/utilisateur/Bureau/single_cell_DEG/results/SCD1_seurat_object.rds
+    jobid: 2
+    wildcards: output_dir=/home/utilisateur/Bureau/single_cell_DEG/results, sample=SCD1
+
+[Fri Nov  8 22:52:21 2024]
+rule quality_control:
+    input: /home/utilisateur/Bureau/sc_RNA_seq_data_preprocessing/data/NML2
+    output: /home/utilisateur/Bureau/single_cell_DEG/results/NML2_seurat_object.rds
+    jobid: 5
+    wildcards: output_dir=/home/utilisateur/Bureau/single_cell_DEG/results, sample=NML2
+
+[Fri Nov  8 22:52:21 2024]
+[Fri Nov  8 22:52:21 2024]
+Error in rule quality_control:
+Error in rule quality_control:
+    jobid: 2
+    jobid: 5
+    output: /home/utilisateur/Bureau/single_cell_DEG/results/SCD1_seurat_object.rds
+    output: /home/utilisateur/Bureau/single_cell_DEG/results/NML2_seurat_object.rds
+
+
+RuleException:
+URLError in line 25 of /home/utilisateur/Bureau/single_cell_DEG/Snakefile:
+<urlopen error [Errno 2] No such file or directory: '/home/utilisateur/Bureau/single_cell_DEG/quality_control_and_preprocessing.r'>
+  File "/home/utilisateur/Bureau/single_cell_DEG/Snakefile", line 25, in __rule_quality_control
+  File "/usr/lib/python3.8/urllib/request.py", line 222, in urlopen
+  File "/usr/lib/python3.8/urllib/request.py", line 525, in open
+  File "/usr/lib/python3.8/urllib/request.py", line 542, in _open
+  File "/usr/lib/python3.8/urllib/request.py", line 502, in _call_chain
+  File "/usr/lib/python3.8/urllib/request.py", line 1489, in file_open
+  File "/usr/lib/python3.8/urllib/request.py", line 1528, in open_local_file
+  File "/usr/lib/python3.8/concurrent/futures/thread.py", line 57, in run
+RuleException:
+URLError in line 25 of /home/utilisateur/Bureau/single_cell_DEG/Snakefile:
+<urlopen error [Errno 2] No such file or directory: '/home/utilisateur/Bureau/single_cell_DEG/quality_control_and_preprocessing.r'>
+  File "/home/utilisateur/Bureau/single_cell_DEG/Snakefile", line 25, in __rule_quality_control
+  File "/usr/lib/python3.8/urllib/request.py", line 222, in urlopen
+  File "/usr/lib/python3.8/urllib/request.py", line 525, in open
+  File "/usr/lib/python3.8/urllib/request.py", line 542, in _open
+  File "/usr/lib/python3.8/urllib/request.py", line 502, in _call_chain
+  File "/usr/lib/python3.8/urllib/request.py", line 1489, in file_open
+  File "/usr/lib/python3.8/urllib/request.py", line 1528, in open_local_file
+  File "/usr/lib/python3.8/concurrent/futures/thread.py", line 57, in run
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: /home/utilisateur/Bureau/single_cell_DEG/.snakemake/log/2024-11-08T225221.379610.snakemake.log
