@@ -15,7 +15,7 @@ The pipeline is designed for single-cell RNA-Seq data available from GEO. Specif
 - **Organism**: human samples
 - **Conditions**: 
   - For human samples: Data includes sorted cells from patients with idiopathic pulmonary fibrosis (IPF) and scleroderma, as well as normal controls. 
-- **Samples for Testing**: We used data from two scleroderma lungs and two normal lungs.
+- **Samples for Testing**: I used data from two scleroderma lungs and two normal lungs.
 
 ## Installation
 
