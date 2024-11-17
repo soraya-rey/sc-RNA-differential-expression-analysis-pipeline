@@ -12,9 +12,8 @@ This Snakemake pipeline performs differential expression analysis on single-cell
 The pipeline is designed for single-cell RNA-Seq data available from GEO. Specifically, we used data from the following dataset: [GSE132771](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE132771). 
 
 **Dataset Description**:
-- **Organism**: Mouse and human samples
-- **Conditions**:
-  - For mice: Lung fibrosis was induced by bleomycin in two Col1a1-GFP mice, with two untreated mice as controls.
+- **Organism**: human samples
+- **Conditions**: 
   - For human samples: Data includes sorted cells from patients with idiopathic pulmonary fibrosis (IPF) and scleroderma, as well as normal controls. 
 - **Samples for Testing**: We used data from two scleroderma lungs and two normal lungs.
 
